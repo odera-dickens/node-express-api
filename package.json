@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/odera-dickens/portfolio.git"
+    "url": "git+https://github.com/odera-dickens/node-express-api.git"
   },
   "author": "Dickens-odera",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/odera-dickens/portfolio/issues"
+    "url": "https://github.com/odera-dickens/node-express-api/issues"
   },
-  "homepage": "https://github.com/odera-dickens/portfolio#readme",
+  "homepage": "https://github.com/odera-dickens/node-express-api#readme",
   "dependencies": {
     "express": "^4.17.1",
     "uuid": "^8.3.2"
