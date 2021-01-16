@@ -25,7 +25,6 @@ router.get('/:id',(req, res) => {
     res.send(foundUser);
 });
 
-
 //delete a user with unique id
 router.delete('/:id',(req, res) => {
     const { id } = req.params;
