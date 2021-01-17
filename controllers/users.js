@@ -1,9 +1,23 @@
 import { v4 as uuidv4 } from 'uuid';
 
-
 //declare an empty users array
 let users = [];
 
+//create a getUser middleware
+async function findUser(req, res, next){
+    const foundUser;
+    try{
+        const { id } = req.params;
+        foundUser = await users.find((user) => user.id === id);
+        if(foundUser == null){
+            return res.status(404).json({message:"User Not found"});
+        }
+    }catch(err){
+        return res.status(500).json({message:err.message});
+    }
+    res.foundUser = foundUser;
+    next();
+}
 
 //get all users
 export const getUsers = (req, res) => res.send(users);
@@ -15,7 +29,7 @@ export const getUser = (req, res) => {
     res.send(foundUser);
 }
 
-//create an new user
+//add a new user to users array and add a new item (id) onto the array
 export const createUser = (req, res) => {
     const user = req.body;
     const userwithId = {...user, id: uuidv4() };
